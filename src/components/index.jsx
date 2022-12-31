@@ -31,12 +31,6 @@ export const Card = (props) => {
 };
 
 export const Modal = ({ item }) => {
-  const [qty, setQty] = useState(1);
-  const dispatch = useDispatch();
-
-  const add = (item, quantity) => {
-    dispatch(addtoCart(item, quantity));
-  };
   return (
     <div
       class="modal fade "
@@ -87,7 +81,7 @@ export const Modal = ({ item }) => {
                   <button type="button" className="btn btn-secondary">
                     -
                   </button>
-                  <span className="btn btn-light qty">{qty}</span>
+                  <span className="btn btn-light qty"></span>
                   <button type="button" className="btn btn-secondary">
                     +
                   </button>
@@ -111,6 +105,14 @@ export const Modal = ({ item }) => {
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+export const List = (props) => {
+  return (
+    <div className="col-sm">
+      <div className="row">{/* DATA LIST */}</div>
     </div>
   );
 };
