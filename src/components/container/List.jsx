@@ -1,5 +1,5 @@
 import Card from "./Card";
-const List = (props) => {
+const List = ({ data }) => {
   return (
     <>
       <Card />

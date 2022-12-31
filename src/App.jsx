@@ -2,6 +2,7 @@ import "./App.css";
 import List from "./components/container/List";
 import SideMenu from "./components/container/SideMenu";
 import Navbar from "./components/header/Navbar";
+import list from "./libs/data/data";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
           <SideMenu />
           <div className="col-sm">
             <div className="row">
-              <List />
+              <List data={list} />
             </div>
           </div>
         </div>

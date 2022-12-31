@@ -317,4 +317,5 @@ const boissons = [
   },
 ];
 
-export const list = [fruits, legumes, fresh, epicerie, boissons];
+const list = [fruits, legumes, fresh, epicerie, boissons];
+export default list;
