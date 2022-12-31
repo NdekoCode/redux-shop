@@ -1,4 +1,5 @@
 import "./App.css";
+import SideMenu from "./components/container/SideMenu";
 import Navbar from "./components/header/Navbar";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
       <Navbar />
       <div className="container">
         <div className="row">
-          <div className="col-sm-2">Side menu</div>
+          <SideMenu />
           <div className="col-sm">Store</div>
         </div>
       </div>
