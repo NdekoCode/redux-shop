@@ -1,7 +1,13 @@
 import "./App.css";
+import Navbar from "./components/header/Navbar";
 
 function App() {
-  return <>No product in the store :(</>;
+  return (
+    <>
+      <Navbar />
+      No product in the store :(
+    </>
+  );
 }
 
 export default App;
