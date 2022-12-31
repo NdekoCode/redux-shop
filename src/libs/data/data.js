@@ -47,7 +47,6 @@ const fruits = [
     unit: "kg",
     image: "figues.png",
   },
-  ,
   {
     ref: "fruits_7",
     category: 0,
