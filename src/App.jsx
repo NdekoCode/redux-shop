@@ -1,5 +1,5 @@
 import "./App.css";
-import Card from "./components/container/Card";
+import List from "./components/container/List";
 import SideMenu from "./components/container/SideMenu";
 import Navbar from "./components/header/Navbar";
 
@@ -12,12 +12,7 @@ function App() {
           <SideMenu />
           <div className="col-sm">
             <div className="row">
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+              <List />
             </div>
           </div>
         </div>
