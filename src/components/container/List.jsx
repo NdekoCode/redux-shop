@@ -1,5 +1,5 @@
 import Card from "./Card";
-const List = ({ data, category }) => {
+const List = ({ data }) => {
   return (
     <>
       {data.map((item) => (

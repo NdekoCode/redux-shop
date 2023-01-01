@@ -24,7 +24,7 @@ function App() {
           <SideMenu setCategory={setCategory} category={category} />
           <div className="col-sm">
             <div className="row">
-              <List category={category} data={products} />
+              <List data={products} />
             </div>
           </div>
         </div>
