@@ -11,7 +11,7 @@ function App() {
   const [products, setProduct] = useState([]);
   useEffect(() => {
     setProduct(list[category]);
-    if (search.length > 1) {
+    if (search.length >= 1) {
       setProduct(list[category].filter((p) => p.name.includes(search)));
     }
   }, [category, search]);
@@ -21,7 +21,7 @@ function App() {
       <Navbar search={search} setSearch={setSearch} />
       <div className="container">
         <div className="row">
-          <SideMenu setCategory={setCategory} />
+          <SideMenu setCategory={setCategory} category={category} />
           <div className="col-sm">
             <div className="row">
               <List category={category} data={products} />
