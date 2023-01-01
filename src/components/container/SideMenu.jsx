@@ -5,7 +5,13 @@ const SideMenu = ({ setCategory }) => {
       <ul>
         {links.map((link, index) => {
           return (
-            <button key={index} onClick={() => setCategory(index)}>
+            <button
+              key={index}
+              onClick={() => {
+                console.log(index);
+                setCategory(index);
+              }}
+            >
               {link}
             </button>
           );

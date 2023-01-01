@@ -1,6 +1,16 @@
 import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = ({ search, setSearch }) => {
+  const chandleSearch = (evt) => {
+    const value = evt.target.value;
+    setSearch(value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (search.trim().length > 1) {
+      setSearch(search);
+    }
+  };
   return (
     <nav className="navbar orange navbar-expand-lg navbar-light bg-light fixed-top">
       <Link className="navbar-brand crimson" to="/">
@@ -21,10 +31,15 @@ export const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <div className="ms-auto cart">
           <div>
-            <form className="search form-inline my-2 my-lg-0">
+            <form
+              className="search form-inline my-2 my-lg-0"
+              onSubmit={handleSubmit}
+            >
               <input
                 className="form-control mr-sm-2"
                 type="search"
+                value={search}
+                onChange={chandleSearch}
                 name="search"
                 placeholder="Search"
                 aria-label="Search"
