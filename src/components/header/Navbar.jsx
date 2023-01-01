@@ -4,7 +4,7 @@ export const Navbar = () => {
   return (
     <nav className="navbar orange navbar-expand-lg navbar-light bg-light fixed-top">
       <Link className="navbar-brand crimson" to="/">
-        <i class="fas fa-shopping-cart"></i> Mes Courses en Ligne
+        <i className="fas fa-shopping-cart"></i> Mes Courses en Ligne
       </Link>
       <button
         className="navbar-toggler"
@@ -34,9 +34,9 @@ export const Navbar = () => {
           <div className="menu-right ms-auto">
             {/* Cart */}
             <Link to="/cart">
-              <i class="fas fa-shopping-bag fa-2x grey"></i>
+              <i className="fas fa-shopping-bag fa-2x grey"></i>
             </Link>
-            <span class="badge badge-pill badge-success">0</span>
+            <span className="badge badge-pill badge-success">0</span>
           </div>
         </div>
       </div>

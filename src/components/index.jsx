@@ -86,11 +86,3 @@ export const Modal = ({ item }) => {
     </div>
   );
 };
-
-export const List = (props) => {
-  return (
-    <div className="col-sm">
-      <div className="row">{/* DATA CART LIST */}</div>
-    </div>
-  );
-};

@@ -1,15 +1,20 @@
-const Card = (props) => {
+const Card = ({ fruit }) => {
   return (
     <div className="col-sm-4">
       <div className="card">
-        <img width="170" height="170" src="/assets/0/citron.png" alt="Citron" />
+        <img
+          width="170"
+          height="170"
+          src={`/assets/${fruit.category}/${fruit.image}`}
+          alt={fruit.name}
+        />
         <div className="card-body">
           <div className="row">
             <div className="col-sm-6">
-              <h4>Citron</h4>
+              <h4>{fruit.name}</h4>
             </div>
             <div className="col-sm-6">
-              <p>€3/unit </p>
+              <p>{`£${fruit.price}/${fruit.unit}`}</p>
               <button className="btn btn-warning btn-sm">view product</button>
             </div>
           </div>
