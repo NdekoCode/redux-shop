@@ -12,7 +12,11 @@ function App() {
   useEffect(() => {
     setProduct(list[category]);
     if (search.length >= 1) {
-      setProduct(list[category].filter((p) => p.name.includes(search)));
+      setProduct(
+        list
+          .flat()
+          .filter((p) => p.name.toLowerCase().includes(search.toLowerCase()))
+      );
     }
   }, [category, search]);
 
