@@ -1,11 +1,11 @@
-const SideMenu = ({ setIndex }) => {
+const SideMenu = ({ setCategory }) => {
   const links = ["Fruits", "Légumes", "Produits Frais", "Epicerie", "Boissons"];
   return (
     <div className="col-sm-2 sidebar">
       <ul>
         {links.map((link, index) => {
           return (
-            <button key={index} onClick={() => setIndex(index)}>
+            <button key={index} onClick={() => setCategory(index)}>
               {link}
             </button>
           );

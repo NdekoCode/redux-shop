@@ -6,17 +6,17 @@ import Navbar from "./components/header/Navbar";
 import list from "./libs/data/data";
 
 function App() {
-  const [index, setIndex] = useState(0);
+  const [category, setCategory] = useState(0);
 
   return (
     <>
       <Navbar />
       <div className="container">
         <div className="row">
-          <SideMenu setIndex={setIndex} />
+          <SideMenu setCategory={setCategory} />
           <div className="col-sm">
             <div className="row">
-              <List item={index} data={list} />
+              <List category={category} data={list} />
             </div>
           </div>
         </div>

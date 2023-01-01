@@ -1,6 +1,6 @@
 import Card from "./Card";
-const List = ({ data, item }) => {
-  const fruits = data[item];
+const List = ({ data, category }) => {
+  const fruits = data[category];
   return (
     <>
       {fruits.map((fruit) => (
