@@ -1,13 +1,11 @@
 import Card from "./Card";
 const List = ({ data }) => {
+  const fruits = data[0];
   return (
     <>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {fruits.map((fruit) => (
+        <Card fruit={fruit} key={fruit.ref} />
+      ))}
     </>
   );
 };
