@@ -14,7 +14,7 @@ const Card = ({ fruit }) => {
               <h4>{fruit.name}</h4>
             </div>
             <div className="col-sm-6">
-              <p>{`${fruit.price}/${fruit.unit}`}</p>
+              <p>{`£${fruit.price}/${fruit.unit}`}</p>
               <button className="btn btn-warning btn-sm">view product</button>
             </div>
           </div>
