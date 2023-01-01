@@ -2,8 +2,8 @@ import Card from "./Card";
 const List = ({ data, category }) => {
   return (
     <>
-      {data.map((fruit) => (
-        <Card fruit={fruit} key={fruit.ref} />
+      {data.map((item) => (
+        <Card item={item} key={item.ref} />
       ))}
     </>
   );
