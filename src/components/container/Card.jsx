@@ -16,7 +16,7 @@ const Card = ({ item }) => {
               <h4>{item.name}</h4>
             </div>
             <div className="col-sm-6">
-              <p>{`£${item.price}/${item.unit}`}</p>
+              <p>{`€${item.price}/${item.unit}`}</p>
               <button
                 className="btn btn-warning btn-sm"
                 type="button"

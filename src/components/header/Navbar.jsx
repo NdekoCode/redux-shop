@@ -51,7 +51,7 @@ export const Navbar = ({ search, setSearch }) => {
             <Link to="/cart">
               <i className="fas fa-shopping-bag fa-2x grey"></i>
             </Link>
-            <span className="badge badge-pill badge-success">0</span>
+            <span className="badge top-0 p-1 bg-success">0</span>
           </div>
         </div>
       </div>

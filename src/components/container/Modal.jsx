@@ -48,7 +48,7 @@ const Modal = ({ item }) => {
                     <button type="button" className="btn btn-secondary">
                       -
                     </button>
-                    <span className="btn btn-light qty" />
+                    <span className="btn btn-light qty">1</span>
                     <button type="button" className="btn btn-secondary">
                       +
                     </button>
