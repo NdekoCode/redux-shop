@@ -1,4 +1,10 @@
-const Modal = ({ item }) => {
+import { memo } from "react";
+import { useIncrement } from "../../hooks/useIncrement";
+
+const Modal = memo(({ item }) => {
+  const [state, dispatch] = useIncrement();
+  const increment = () => dispatch({ type: "incr" });
+  const decrement = () => dispatch({ type: "decr" });
   return (
     <>
       <div
@@ -45,11 +51,19 @@ const Modal = ({ item }) => {
                     role="group"
                     aria-label="Basic example"
                   >
-                    <button type="button" className="btn btn-secondary">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      onClick={decrement}
+                    >
                       -
                     </button>
-                    <span className="btn btn-light qty">1</span>
-                    <button type="button" className="btn btn-secondary">
+                    <span className="btn btn-light qty">{state.count}</span>
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      onClick={increment}
+                    >
                       +
                     </button>
                   </div>
@@ -78,5 +92,5 @@ const Modal = ({ item }) => {
       </div>
     </>
   );
-};
+});
 export default Modal;
