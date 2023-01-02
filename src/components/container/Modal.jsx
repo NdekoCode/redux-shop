@@ -14,16 +14,15 @@ const Modal = ({ item }) => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="staticBackdropLabel">
-                {"{"}item.name{"}"}
+                {item.name}
               </h5>
               <button
                 type="button"
-                className="close"
+                className="btn-close"
+                data-bs-dismiss="modal"
                 data-dismiss="modal"
                 aria-label="Close"
-              >
-                <span aria-hidden="true">×</span>
-              </button>
+              ></button>
             </div>
             <div className="modal-body">
               <div className="row">
@@ -31,8 +30,8 @@ const Modal = ({ item }) => {
                   <img
                     width={170}
                     height={170}
-                    src="/assets/0/citron.png"
-                    alt="Citron"
+                    src={`/assets/${item.category}/${item.image}`}
+                    alt={item.name}
                   />
                 </div>
                 <div className="col-sm">
@@ -40,7 +39,7 @@ const Modal = ({ item }) => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore
                   </p>
-                  <h3 className="price">€3/unit</h3>
+                  <h3 className="price">{`€${item.price}/${item.unit}`}</h3>
                   <div
                     className="btn-group"
                     role="group"
@@ -62,7 +61,7 @@ const Modal = ({ item }) => {
               <button
                 type="button"
                 className="btn btn-secondary"
-                data-dismiss="modal"
+                data-bs-dismiss="modal"
               >
                 Close
               </button>
