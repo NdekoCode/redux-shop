@@ -1,3 +1,5 @@
+import Modal from "./Modal";
+
 const Card = ({ item }) => {
   return (
     <div className="col-sm-4">
@@ -15,12 +17,20 @@ const Card = ({ item }) => {
             </div>
             <div className="col-sm-6">
               <p>{`£${item.price}/${item.unit}`}</p>
-              <button className="btn btn-warning btn-sm">view product</button>
+              <button
+                className="btn btn-warning btn-sm"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target={`#${item.ref}`}
+              >
+                view product
+              </button>
             </div>
           </div>
         </div>
       </div>
       {/* Modal */}
+      <Modal item={item} />
     </div>
   );
 };
