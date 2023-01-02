@@ -1,9 +1,9 @@
 import Card from "./Card";
-const List = ({ data }) => {
+const List = ({ data, incrementCart }) => {
   return (
     <>
       {data.map((item) => (
-        <Card item={item} key={item.ref} />
+        <Card incrementCart={incrementCart} item={item} key={item.ref} />
       ))}
     </>
   );

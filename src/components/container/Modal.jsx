@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { useIncrement } from "../../hooks/useIncrement";
 
-const Modal = memo(({ item }) => {
+const Modal = memo(({ item, incrementCart }) => {
   const [state, dispatch] = useIncrement();
   const increment = () => dispatch({ type: "incr" });
   const decrement = () => dispatch({ type: "decr" });
@@ -83,6 +83,7 @@ const Modal = memo(({ item }) => {
                 type="button"
                 className="btn btn-success"
                 data-dismiss="modal"
+                onClick={incrementCart}
               >
                 Add to Cart
               </button>

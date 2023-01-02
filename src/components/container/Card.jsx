@@ -1,6 +1,6 @@
 import Modal from "./Modal";
 
-const Card = ({ item }) => {
+const Card = ({ item, incrementCart }) => {
   return (
     <div className="col-sm-4">
       <div className="card">
@@ -30,7 +30,7 @@ const Card = ({ item }) => {
         </div>
       </div>
       {/* Modal */}
-      <Modal item={item} />
+      <Modal item={item} incrementCart={incrementCart} />
     </div>
   );
 };
