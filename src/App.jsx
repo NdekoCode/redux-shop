@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import List from "./components/container/List";
-import SideMenu from "./components/container/SideMenu";
 import Navbar from "./components/header/Navbar";
+import Cart from "./components/pages/Cart";
+import Home from "./components/pages/Home";
 import { useIncrement } from "./hooks/useIncrement";
 import list from "./libs/data/data";
-
 function App() {
   const [category, setCategory] = useState(0);
+  const [search, setSearch] = useState("");
+  const [products, setProduct] = useState([]);
+
   const [{ count }, dispatch] = useIncrement();
   const increment = () => {
     console.log("Increment");
     dispatch({ type: "incr" });
   };
-  const [search, setSearch] = useState("");
-  const [products, setProduct] = useState([]);
   useEffect(() => {
     setProduct(list[category]);
     if (search.length >= 1) {
@@ -29,16 +30,21 @@ function App() {
   return (
     <>
       <Navbar search={search} setSearch={setSearch} count={count} />
-      <div className="container">
-        <div className="row">
-          <SideMenu setCategory={setCategory} category={category} />
-          <div className="col-sm">
-            <div className="row">
-              <List incrementCart={increment} data={products} />
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              setCategory={setCategory}
+              category={category}
+              products={products}
+              increment={increment}
+            />
+          }
+        />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     </>
   );
 }
