@@ -1,11 +1,15 @@
 import React from "react";
+import Table from "../container/Table";
 
 const Cart = () => {
   return (
     <>
       <div className="container">
         <div className="row">
-          <div className="col-sm cart">{/* Table */}</div>
+          <div className="col-sm cart">
+            {/* Table */}
+            <Table />
+          </div>
 
           <div className="col-sm-3 order-summary">
             <ul className="list-group">
