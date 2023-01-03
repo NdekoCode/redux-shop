@@ -7,15 +7,21 @@ const ACTIONS = {
   UPDATE_CART: "UPDATE_CART",
   REMOVE_FROM_CART: "REMOVE_FROM_CART",
 };
-const { ADD_TO_CART } = ACTIONS;
+const { ADD_TO_CART, UPDATE_CART } = ACTIONS;
 export const addToCart = (item) => {
   return {
     type: ADD_TO_CART,
     payload: {
       id: uuid(),
-      qty: 1,
+      quantity: 1,
       ...item,
     },
+  };
+};
+export const updateCart = (updateData, quantity) => {
+  return {
+    type: UPDATE_CART,
+    payload: { ...updateData, quantity },
   };
 };
 export default ACTIONS;
