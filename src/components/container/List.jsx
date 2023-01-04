@@ -3,7 +3,7 @@ const List = ({ data, incrementCart }) => {
   return (
     <>
       {data.map((item) => (
-        <Card incrementCart={incrementCart} item={item} key={item.ref} />
+        <Card incrementCart={incrementCart} item={item} key={item.id} />
       ))}
     </>
   );

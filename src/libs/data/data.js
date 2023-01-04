@@ -1,5 +1,8 @@
+import { uuid } from "../utils";
+
 const fruits = [
   {
+    id: uuid(),
     ref: "fruits_1",
     category: 0,
     name: "Citrons",
@@ -8,6 +11,7 @@ const fruits = [
     image: "citron.png",
   },
   {
+    id: uuid(),
     ref: "fruits_2",
     category: 0,
     name: "Citrons Vert",
@@ -16,6 +20,7 @@ const fruits = [
     image: "lime.png",
   },
   {
+    id: uuid(),
     ref: "fruits_3",
     category: 0,
     name: "Fraises",
@@ -24,6 +29,7 @@ const fruits = [
     image: "fraise.png",
   },
   {
+    id: uuid(),
     ref: "fruits_4",
     category: 0,
     name: "Noix de coco",
@@ -32,6 +38,7 @@ const fruits = [
     image: "coconut.png",
   },
   {
+    id: uuid(),
     ref: "fruits_5",
     category: 0,
     name: "Clémentine",
@@ -40,6 +47,7 @@ const fruits = [
     image: "clementine.png",
   },
   {
+    id: uuid(),
     ref: "fruits_6",
     category: 0,
     name: "Figues",
@@ -48,6 +56,7 @@ const fruits = [
     image: "figues.png",
   },
   {
+    id: uuid(),
     ref: "fruits_7",
     category: 0,
     name: "Raisins",
@@ -56,6 +65,7 @@ const fruits = [
     image: "grapes.png",
   },
   {
+    id: uuid(),
     ref: "fruits_8",
     category: 0,
     name: "Kiwi",
@@ -64,6 +74,7 @@ const fruits = [
     image: "kiwi.png",
   },
   {
+    id: uuid(),
     ref: "fruits_9",
     category: 0,
     name: "Poires",
@@ -75,6 +86,7 @@ const fruits = [
 
 const legumes = [
   {
+    id: uuid(),
     ref: "legumes_1",
     category: 1,
     name: "Oignons",
@@ -83,6 +95,7 @@ const legumes = [
     image: "oignons.png",
   },
   {
+    id: uuid(),
     ref: "legumes_2",
     category: 1,
     name: "Poivrons",
@@ -91,6 +104,7 @@ const legumes = [
     image: "poivrons.png",
   },
   {
+    id: uuid(),
     ref: "legumes_3",
     category: 1,
     name: "Radis",
@@ -99,6 +113,7 @@ const legumes = [
     image: "radis.png",
   },
   {
+    id: uuid(),
     ref: "legumes_4",
     name: "Tomato",
     category: 1,
@@ -107,6 +122,7 @@ const legumes = [
     image: "tomato.png",
   },
   {
+    id: uuid(),
     ref: "legumes_5",
     name: "Brocolis",
     category: 1,
@@ -115,6 +131,7 @@ const legumes = [
     image: "brocoli.png",
   },
   {
+    id: uuid(),
     ref: "legumes_6",
     name: "Aubergines",
     category: 1,
@@ -123,6 +140,7 @@ const legumes = [
     image: "aubergine.png",
   },
   {
+    id: uuid(),
     ref: "legumes_7",
     name: "Carottes",
     category: 1,
@@ -131,6 +149,7 @@ const legumes = [
     image: "carot.png",
   },
   {
+    id: uuid(),
     ref: "legumes_8",
     name: "Choux",
     category: 1,
@@ -142,6 +161,7 @@ const legumes = [
 
 const fresh = [
   {
+    id: uuid(),
     ref: "fresh_1",
     category: 2,
     name: "Milk",
@@ -150,6 +170,7 @@ const fresh = [
     image: "milk.png",
   },
   {
+    id: uuid(),
     ref: "fresh_2",
     category: 2,
     name: "Beurre à tartiner",
@@ -158,6 +179,7 @@ const fresh = [
     image: "beurre.png",
   },
   {
+    id: uuid(),
     ref: "fresh_3",
     category: 2,
     name: "Oeufs",
@@ -166,6 +188,7 @@ const fresh = [
     image: "eggs.png",
   },
   {
+    id: uuid(),
     ref: "fresh_4",
     category: 2,
     name: "Yaourts Nature",
@@ -174,6 +197,7 @@ const fresh = [
     image: "yaourts_nature.png",
   },
   {
+    id: uuid(),
     ref: "fresh_5",
     category: 2,
     name: "Yaourts Fruits",
@@ -185,6 +209,7 @@ const fresh = [
 
 const epicerie = [
   {
+    id: uuid(),
     ref: "epicerie_1",
     category: 3,
     name: "Thon",
@@ -193,6 +218,7 @@ const epicerie = [
     image: "thon.png",
   },
   {
+    id: uuid(),
     ref: "epicerie_2",
     category: 3,
     name: "Sardines",
@@ -201,6 +227,7 @@ const epicerie = [
     image: "sardines.png",
   },
   {
+    id: uuid(),
     ref: "epicerie_3",
     category: 3,
     name: "Cookies",
@@ -209,6 +236,7 @@ const epicerie = [
     image: "cookies.png",
   },
   {
+    id: uuid(),
     ref: "epicerie_4",
     category: 3,
     name: "Biscottes",
@@ -217,6 +245,7 @@ const epicerie = [
     image: "biscottes.png",
   },
   {
+    id: uuid(),
     ref: "epicerie_5",
     category: 3,
     name: "Thé",
@@ -225,6 +254,7 @@ const epicerie = [
     image: "the.png",
   },
   {
+    id: uuid(),
     ref: "epicerie_6",
     category: 3,
     name: "Soupes",
@@ -233,6 +263,7 @@ const epicerie = [
     image: "soupe.png",
   },
   {
+    id: uuid(),
     ref: "epicerie_7",
     category: 3,
     name: "Pâtes",
@@ -244,6 +275,7 @@ const epicerie = [
 
 const boissons = [
   {
+    id: uuid(),
     ref: "boissons_1",
     category: 4,
     name: "Vin Rouge",
@@ -252,6 +284,7 @@ const boissons = [
     image: "bordeaux.png",
   },
   {
+    id: uuid(),
     ref: "boissons_2",
     category: 4,
     name: "Vin blanc",
@@ -260,6 +293,7 @@ const boissons = [
     image: "white_wine.png",
   },
   {
+    id: uuid(),
     ref: "boissons_3",
     category: 4,
     name: "Riesling",
@@ -268,6 +302,7 @@ const boissons = [
     image: "riesling.png",
   },
   {
+    id: uuid(),
     ref: "boissons_4",
     category: 4,
     name: "Coca ",
@@ -276,6 +311,7 @@ const boissons = [
     image: "coke.png",
   },
   {
+    id: uuid(),
     ref: "boissons_5",
     category: 4,
     name: "Sprite",
@@ -284,6 +320,7 @@ const boissons = [
     image: "sprite.png",
   },
   {
+    id: uuid(),
     ref: "boissons_6",
     category: 4,
     name: "Finley",
@@ -292,6 +329,7 @@ const boissons = [
     image: "finley.png",
   },
   {
+    id: uuid(),
     ref: "boissons_7",
     category: 4,
     name: "Nestea",
@@ -300,6 +338,7 @@ const boissons = [
     image: "nestea.png",
   },
   {
+    id: uuid(),
     ref: "boissons_8",
     category: 4,
     name: "Sprite",
@@ -308,6 +347,7 @@ const boissons = [
     image: "sprite.png",
   },
   {
+    id: uuid(),
     ref: "boissons_9",
     category: 4,
     name: "Sprite Zero",
