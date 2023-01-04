@@ -1,5 +1,5 @@
-import List from "../container/List";
-import SideMenu from "../container/SideMenu";
+import List from "./components/container/List";
+import SideMenu from "./components/SideMenu";
 
 function Home({ setCategory, products, category, increment }) {
   return (

@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { useIncrement } from "../../hooks/useIncrement";
+import { useIncrement } from "../../../libs/hooks/useIncrement";
 
 const Modal = memo(({ item, incrementCart }) => {
   const [state, dispatch] = useIncrement();

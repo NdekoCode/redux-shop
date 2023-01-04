@@ -1,5 +1,5 @@
 import React from "react";
-import Table from "../container/Table";
+import Table from "./components/cart/Table";
 
 const Cart = () => {
   return (
