@@ -1,8 +1,10 @@
+import list from "../../data/data";
 import ACTIONS from "./actions";
 
 const { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_CART } = ACTIONS;
 const initialState = {
   cartItems: [],
+  items: list,
 };
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {

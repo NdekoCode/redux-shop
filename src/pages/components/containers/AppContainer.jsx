@@ -5,8 +5,8 @@ import {
   removeFromCart,
   updateCart,
 } from "../../../libs/store/shop/actions";
-import { getCartItems } from "../../../libs/store/shop/selectors";
-const mapStateToProps = getCartItems;
+import { getItems } from "../../../libs/store/shop/selectors";
+const mapStateToProps = getItems;
 const mapDispatchToProps = (dispatch) => ({
   onAddToCart: (item) => dispatch(addToCart(item)),
   onRemoveCart: (item) => dispatch(removeFromCart(item)),
