@@ -6,9 +6,9 @@ const initialState = {
 };
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_TO_CART: {
-      return { ...state, cartItems: [action.payload, ...state.items] };
-    }
+    case ADD_TO_CART:
+      return { ...state, cartItems: [action.payload, ...state.cartItems] };
+
     case UPDATE_CART:
       const findAndCart = (cart) => {
         if (cart.id === action.payload.id) {

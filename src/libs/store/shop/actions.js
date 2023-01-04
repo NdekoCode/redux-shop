@@ -13,7 +13,6 @@ export const addToCart = (item) => {
     type: ADD_TO_CART,
     payload: {
       id: uuid(),
-      quantity: 1,
       ...item,
     },
   };

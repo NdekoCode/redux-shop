@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@popperjs/core': ^2.11.6
+  '@redux-devtools/extension': ^3.2.3
   '@testing-library/dom': ^8.19.1
   '@testing-library/jest-dom': ^5.16.5
   '@testing-library/react': ^13.4.0
@@ -25,6 +26,7 @@ specifiers:
 
 dependencies:
   '@popperjs/core': 2.11.6
+  '@redux-devtools/extension': 3.2.3_redux@4.2.0
   '@testing-library/dom': 8.19.1
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
@@ -1107,6 +1109,16 @@ packages:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
     dev: false
 
+  /@redux-devtools/extension/3.2.3_redux@4.2.0:
+    resolution: {integrity: sha512-y90IIqdQF6kIkP4KfBCfiFrnu9KMrEPUmcnb5A3v12tjfwRJUXecX8vCEbFqqJLjOomvVmis0Aal7QdFjk6CRQ==}
+    peerDependencies:
+      redux: ^3.1.0 || ^4.0.0
+    dependencies:
+      '@babel/runtime': 7.20.6
+      immutable: 4.2.1
+      redux: 4.2.0
+    dev: false
+
   /@remix-run/router/1.2.1:
     resolution: {integrity: sha512-XiY0IsyHR+DXYS5vBxpoBe/8veTeoRpMHP+vDosLZxL5bnpetzI0igkxkLZS235ldLzyfkxF+2divEwWHP3vMQ==}
     engines: {node: '>=14'}
@@ -1812,6 +1824,10 @@ packages:
 
   /idb/7.0.1:
     resolution: {integrity: sha512-UUxlE7vGWK5RfB/fDwEGgRf84DY/ieqNha6msMV99UsEMQhJ1RwbCd8AYBj3QMgnE3VZnfQvm4oKVCJTYlqIgg==}
+    dev: false
+
+  /immutable/4.2.1:
+    resolution: {integrity: sha512-7WYV7Q5BTs0nlQm7tl92rDYYoyELLKHoDMBKhrxEoiV4mrfVdRz8hzPiYOzH7yWjzoVEamxRuAqhxL2PLRwZYQ==}
     dev: false
 
   /indent-string/4.0.0:
