@@ -12,7 +12,6 @@ shopStore.dispatch(
   addToCart({
     ref: "fruits_1",
     category: 0,
-    quantity: 3,
     name: "Citrons",
     price: 0.99,
     unit: "pièce",
