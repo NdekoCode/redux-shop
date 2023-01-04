@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/header/Navbar";
-import Cart from "./components/pages/Cart";
-import Home from "./components/pages/Home";
-import { useIncrement } from "./hooks/useIncrement";
 import list from "./libs/data/data";
-function App() {
+import { useIncrement } from "./libs/hooks/useIncrement";
+import Cart from "./pages/Cart";
+import Navbar from "./pages/components/Navbar";
+import Home from "./pages/Home";
+function App({ cartItems, items }) {
   const [category, setCategory] = useState(0);
   const [search, setSearch] = useState("");
   const [products, setProduct] = useState([]);

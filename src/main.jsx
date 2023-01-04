@@ -3,11 +3,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
 import "./index.css";
 import { addToCart } from "./libs/store/shop/actions";
 import { shopStore } from "./libs/store/shop/stores";
-console.log(shopStore.getState());
+import AppContainer from "./pages/components/containers/AppContainer";
 shopStore.dispatch(
   addToCart({
     ref: "fruits_1",
@@ -19,12 +18,11 @@ shopStore.dispatch(
   })
 );
 
-console.log(shopStore.getState());
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={shopStore}>
-        <App />
+        <AppContainer />
       </Provider>
     </BrowserRouter>
   </React.StrictMode>
