@@ -1,4 +1,4 @@
-import Card from "./container/Card";
+import Card from "./Home/Card";
 const List = ({ data, incrementCart }) => {
   return (
     <>

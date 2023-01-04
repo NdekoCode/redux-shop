@@ -1,4 +1,4 @@
-import List from "./components/container/List";
+import List from "./components/Home/List";
 import SideMenu from "./components/SideMenu";
 
 function Home({ setCategory, products, category, increment }) {

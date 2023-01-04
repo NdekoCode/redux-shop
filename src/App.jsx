@@ -6,7 +6,8 @@ import { useIncrement } from "./libs/hooks/useIncrement";
 import Cart from "./pages/Cart";
 import Navbar from "./pages/components/Navbar";
 import Home from "./pages/Home";
-function App() {
+function App({ cartItems }) {
+  console.log(cartItems);
   const [category, setCategory] = useState(0);
   const [search, setSearch] = useState("");
   const [products, setProduct] = useState([]);
