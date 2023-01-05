@@ -16,7 +16,7 @@ export const cartReducer = (state = initialState, action) => {
           cart.price === action.payload.price
         ) {
           cartExist = true;
-          cart.quantity = cart.quantity + 1;
+          cart.quantity = cart.quantity + action.payload.quantity;
           return cart;
         }
         return cart;
