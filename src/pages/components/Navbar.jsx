@@ -55,7 +55,7 @@ export const Navbar = ({ search, setSearch }) => {
               <i className="fas fa-shopping-bag fa-2x grey"></i>
             </Link>
             <span className="badge top-0 p-1 bg-success rounded-circle">
-              {cartItems.length}
+              {cartItems.length > 0 && cartItems.length}
             </span>
           </div>
         </div>
