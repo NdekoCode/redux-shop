@@ -30,7 +30,7 @@ export const Row = ({ item }) => {
           </button>
         </div>
       </td>
-      <td>€{item.price * item.quantity}</td>
+      <td>€{(item.price * item.quantity).toFixed(2)}</td>
       <td>
         <button
           type="button"
@@ -44,7 +44,6 @@ export const Row = ({ item }) => {
   );
 };
 const Table = ({ items }) => {
-  console.log(items);
   return (
     <table className="table table-striped">
       <thead>
