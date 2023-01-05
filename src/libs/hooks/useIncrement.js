@@ -12,7 +12,10 @@ const incrementReducer = (state, action) => {
       return state;
   }
 };
-export function useIncrement(initialValue = { count: 1 }) {
+export function useIncrement(value = 1) {
+  const initialValue = {
+    count: value,
+  };
   const [count, incrementDispatch] = useReducer(incrementReducer, initialValue);
   return [count, incrementDispatch];
 }
