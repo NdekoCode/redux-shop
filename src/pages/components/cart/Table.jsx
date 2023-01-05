@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useIncrement } from "../../../libs/hooks/useIncrement";
-import { updateCart } from "../../../libs/store/shop/actions";
+import { removeFromCart, updateCart } from "../../../libs/store/shop/actions";
 
 export const Row = ({ item }) => {
   const dispatch = useDispatch();
@@ -14,6 +14,7 @@ export const Row = ({ item }) => {
     update(item, count);
   };
   const update = (item, count) => dispatch(updateCart(item, count));
+  const remove = (item) => dispatch(removeFromCart(item));
   return (
     <tr>
       <td>
@@ -51,7 +52,7 @@ export const Row = ({ item }) => {
         <button
           type="button"
           className="btn btn-danger remove"
-          onClick={() => {}}
+          onClick={() => remove(item)}
         >
           X
         </button>
