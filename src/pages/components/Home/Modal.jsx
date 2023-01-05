@@ -1,14 +1,18 @@
 import { memo } from "react";
+import { connect } from "react-redux";
 import { useIncrement } from "../../../libs/hooks/useIncrement";
+import { addToCart } from "../../../libs/store/shop/actions";
+import { getCartItems } from "../../../libs/store/shop/selectors";
 
-const Modal = memo(({ item, incrementCart }) => {
+const Modal = memo(({ item, add, cartItems }) => {
   const [state, dispatch] = useIncrement();
+  item.quantity = state.count;
   const increment = () => dispatch({ type: "incr" });
   const decrement = () => dispatch({ type: "decr" });
   return (
     <>
       <div
-        className="modal fade "
+        className="modal fade"
         id={item.ref}
         data-backdrop="static"
         tabIndex="-1"
@@ -58,7 +62,7 @@ const Modal = memo(({ item, incrementCart }) => {
                     >
                       -
                     </button>
-                    <span className="btn btn-light qty">{state.count}</span>
+                    <span className="btn btn-light qty">{item.quantity}</span>
                     <button
                       type="button"
                       className="btn btn-secondary"
@@ -83,7 +87,10 @@ const Modal = memo(({ item, incrementCart }) => {
                 type="button"
                 className="btn btn-success"
                 data-dismiss="modal"
-                onClick={incrementCart}
+                onClick={() => {
+                  console.log(item);
+                  add(item);
+                }}
               >
                 Add to Cart
               </button>
@@ -94,4 +101,9 @@ const Modal = memo(({ item, incrementCart }) => {
     </>
   );
 });
-export default Modal;
+
+const mapDispatchToProps = (dispatch) => ({
+  add: (item) => dispatch(addToCart(item)),
+});
+
+export default connect(getCartItems, mapDispatchToProps)(Modal);

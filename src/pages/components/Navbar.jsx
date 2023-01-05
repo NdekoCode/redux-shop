@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const Navbar = ({ search, setSearch, count }) => {
+export const Navbar = ({ search, setSearch, cartItems }) => {
   const chandleSearch = (evt) => {
     const value = evt.target.value;
     setSearch(value);
@@ -52,7 +52,7 @@ export const Navbar = ({ search, setSearch, count }) => {
               <i className="fas fa-shopping-bag fa-2x grey"></i>
             </Link>
             <span className="badge top-0 p-1 bg-success rounded-circle">
-              {count}
+              {cartItems.length}
             </span>
           </div>
         </div>

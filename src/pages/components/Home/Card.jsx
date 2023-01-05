@@ -30,7 +30,7 @@ const Card = ({ item, incrementCart }) => {
         </div>
       </div>
       {/* Modal */}
-      <Modal item={item} incrementCart={incrementCart} />
+      <Modal item={item} />
     </div>
   );
 };
