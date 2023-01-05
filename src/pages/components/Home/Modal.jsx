@@ -5,16 +5,16 @@ import { addToCart } from "../../../libs/store/shop/actions";
 import { getCartItems } from "../../../libs/store/shop/selectors";
 
 const Modal = memo(({ item, add }) => {
-  const [state, dispatch] = useIncrement();
-  item.quantity = state.count;
+  const [{ count }, dispatch] = useIncrement();
+  item.quantity = count;
   const increment = () => {
     dispatch({ type: "incr" });
 
-    item.quantity = state.count;
+    item.quantity = count;
   };
   const decrement = () => {
     dispatch({ type: "decr" });
-    item.quantity = state.count;
+    item.quantity = count;
   };
   return (
     <>

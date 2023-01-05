@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getCartItems } from "../../libs/store/shop/selectors";
 
-export const Navbar = ({ search, setSearch, cartItems }) => {
+export const Navbar = ({ search, setSearch }) => {
+  const { cartItems } = useSelector(getCartItems);
   const chandleSearch = (evt) => {
     const value = evt.target.value;
     setSearch(value);

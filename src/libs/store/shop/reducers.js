@@ -10,7 +10,6 @@ export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
       let cartExist = false;
-      const quantity = action.payload.quantity ? action.payload.quantity : 1;
       const findIfExists = (cart) => {
         if (
           cart.name === action.payload.name &&
@@ -30,7 +29,7 @@ export const cartReducer = (state = initialState, action) => {
         ? newState
         : {
             ...state,
-            cartItems: [{ ...action.payload, quantity }, ...state.cartItems],
+            cartItems: [{ ...action.payload }, ...state.cartItems],
           };
 
     case UPDATE_CART:
