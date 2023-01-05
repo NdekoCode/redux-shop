@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getCartItems } from "../../libs/store/shop/selectors";
 
-export const Navbar = ({ search, setSearch, count }) => {
+export const Navbar = ({ search, setSearch }) => {
+  const { cartItems } = useSelector(getCartItems);
   const chandleSearch = (evt) => {
     const value = evt.target.value;
     setSearch(value);
@@ -52,7 +55,7 @@ export const Navbar = ({ search, setSearch, count }) => {
               <i className="fas fa-shopping-bag fa-2x grey"></i>
             </Link>
             <span className="badge top-0 p-1 bg-success rounded-circle">
-              {count}
+              {cartItems.length > 0 && cartItems.length}
             </span>
           </div>
         </div>

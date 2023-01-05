@@ -10,10 +10,12 @@ const ACTIONS = {
 };
 const { ADD_TO_CART, UPDATE_CART, REMOVE_FROM_CART } = ACTIONS;
 export const addToCart = (item) => {
+  const quantity = item.quantity ? item.quantity : 1;
   return {
     type: ADD_TO_CART,
     payload: {
       id: uuid(),
+      quantity,
       ...item,
     },
   };

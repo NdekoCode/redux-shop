@@ -1,26 +1,19 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import list from "./libs/data/data";
-import { useIncrement } from "./libs/hooks/useIncrement";
 import Cart from "./pages/Cart";
 import Navbar from "./pages/components/Navbar";
 import Home from "./pages/Home";
-function App({ cartItems, items }) {
+function App({ items }) {
   const [category, setCategory] = useState(0);
   const [search, setSearch] = useState("");
   const [products, setProduct] = useState([]);
 
-  const [{ count }, dispatch] = useIncrement();
-  const increment = () => {
-    console.log("Increment");
-    dispatch({ type: "incr" });
-  };
   useEffect(() => {
-    setProduct(list[category]);
+    setProduct(items[category]);
     if (search.length >= 1) {
       setProduct(
-        list
+        items
           .flat()
           .filter((p) => p.name.toLowerCase().includes(search.toLowerCase()))
       );
@@ -29,7 +22,7 @@ function App({ cartItems, items }) {
 
   return (
     <>
-      <Navbar search={search} setSearch={setSearch} count={count} />
+      <Navbar search={search} setSearch={setSearch} />
 
       <Routes>
         <Route
@@ -39,7 +32,6 @@ function App({ cartItems, items }) {
               setCategory={setCategory}
               category={category}
               products={products}
-              increment={increment}
             />
           }
         />

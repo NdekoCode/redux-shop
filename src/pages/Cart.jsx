@@ -1,14 +1,15 @@
 import React from "react";
+import { connect } from "react-redux";
 import Table from "./components/cart/Table";
 
-const Cart = () => {
+const Cart = ({ cartItems }) => {
   return (
     <>
       <div className="container">
         <div className="row">
           <div className="col-sm cart">
             {/* Table */}
-            <Table />
+            <Table items={cartItems} />
           </div>
 
           <div className="col-sm-3 order-summary">
@@ -54,4 +55,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default connect(({ cartItems }) => ({ cartItems }))(Cart);
