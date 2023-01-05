@@ -1,18 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { connect } from "react-redux";
 import Table from "./components/cart/Table";
 
 const Cart = ({ cartItems }) => {
-  const shipping = 10.0;
+  const shipping = 10;
   const [subTotal, setSubTotal] = useState(0);
-  const [total, setTotal] = useState(0.0);
+  const [total, setTotal] = useState(0);
+
+  const totalPrice = useMemo(
+    () => cartItems.map((item) => item.price * item.quantity),
+    [cartItems]
+  );
   useEffect(() => {
-    if (cartItems.length) {
-      const totalPrice = cartItems.map((item) => item.price * item.quantity);
+    if (cartItems.length > 0) {
       setSubTotal(totalPrice.reduce((a, b) => a + b));
-      setTotal(Math.abs(subTotal + shipping));
+      setTotal(subTotal + shipping);
+      console.log(totalPrice);
     }
-  }, [subTotal, cartItems]);
+  }, [subTotal, total, cartItems]);
 
   return (
     <>
@@ -58,10 +63,10 @@ const Cart = ({ cartItems }) => {
             </ul>
             <button
               type="button"
-              className="btn btn-light btn-lg btn-block checkout bg-crimson"
+              className="btn w-100 btn-light btn-lg d-block checkout bg-crimson"
               disabled={true}
             >
-              <a href="#" className="white">
+              <a href="#" className="white d-block">
                 Checkout
               </a>
             </button>
