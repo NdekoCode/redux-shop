@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import list from "./libs/data/data";
 import Cart from "./pages/Cart";
 import Navbar from "./pages/components/Navbar";
 import Home from "./pages/Home";
-function App() {
+function App({ items }) {
   const [category, setCategory] = useState(0);
   const [search, setSearch] = useState("");
   const [products, setProduct] = useState([]);
 
   useEffect(() => {
-    setProduct(list[category]);
+    setProduct(items[category]);
     if (search.length >= 1) {
       setProduct(
-        list
+        items
           .flat()
           .filter((p) => p.name.toLowerCase().includes(search.toLowerCase()))
       );
