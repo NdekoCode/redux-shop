@@ -4,11 +4,18 @@ import { useIncrement } from "../../../libs/hooks/useIncrement";
 import { addToCart } from "../../../libs/store/shop/actions";
 import { getCartItems } from "../../../libs/store/shop/selectors";
 
-const Modal = memo(({ item, add, cartItems }) => {
+const Modal = memo(({ item, add }) => {
   const [state, dispatch] = useIncrement();
   item.quantity = state.count;
-  const increment = () => dispatch({ type: "incr" });
-  const decrement = () => dispatch({ type: "decr" });
+  const increment = () => {
+    dispatch({ type: "incr" });
+
+    item.quantity = state.count;
+  };
+  const decrement = () => {
+    dispatch({ type: "decr" });
+    item.quantity = state.count;
+  };
   return (
     <>
       <div
