@@ -1,7 +1,8 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Checkout = () => {
+  const [isValid, setValid] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -10,6 +11,21 @@ const Checkout = () => {
     zipCode: "",
     city: "",
   });
+  const validate = useCallback(
+    (fields) => {
+      const errors = {};
+      for (let field in fields) {
+        if (fields[field].trim().length < 2) {
+          errors[field] = `${field} est requis`;
+          break;
+        }
+      }
+      setValid(Object.keys(errors).length < 1);
+      return Object.keys(errors).length < 1;
+    },
+    [formData]
+  );
+
   const handleChange = useCallback(
     (evt) => {
       const name = evt.target.name;
@@ -19,6 +35,10 @@ const Checkout = () => {
     [formData]
   );
   const { firstName, lastName, email, address, zipCode, city } = formData;
+
+  useEffect(() => {
+    validate(formData);
+  }, [formData]);
   return (
     <>
       <div className="col-sm-6 offset-3">
@@ -99,7 +119,7 @@ const Checkout = () => {
                   type="text"
                   className="form-control"
                   placeholder="City"
-                  city="city"
+                  name="city"
                   property=""
                   defaultValue={city}
                   onChange={handleChange}
@@ -107,13 +127,12 @@ const Checkout = () => {
               </div>
             </div>
           </div>
-          {/*${
-              !isValid && "disabled"
-            }*/}
           <button
             type="submit"
             // disabled={true}
-            className={`w-100  btn btn-light btn-lg btn-block bg-crimson checkout `}
+            className={`w-100 ${
+              !isValid && "disabled"
+            }  btn btn-light btn-lg btn-block bg-crimson checkout `}
           >
             <Link to="/delivery" className="white">
               Confirm

@@ -59,7 +59,7 @@ export const Navbar = ({ search, setSearch }) => {
               </form>
               <div className="navbar-nav menu-right ms-auto mb-lg-0">
                 {/* Cart */}
-                <Link to="/cart" className=" ms-3">
+                <Link to="/cart" className="ms-3">
                   <i className="fas fa-shopping-bag fa-2x grey"></i>
                 </Link>
                 <span className="badge top-0 p-1 bg-success rounded-circle">
