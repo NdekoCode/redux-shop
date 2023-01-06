@@ -1,8 +1,17 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import UseUserContext from "../libs/context/useProfileContext";
+import { getCartItems } from "../libs/store/shop/selectors";
 
 const Checkout = () => {
+  const { cartItems } = useSelector(getCartItems);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!cartItems.length) {
+      navigate("/");
+    }
+  }, [cartItems]);
   const { isValid, validate, formData, handleChangeProfile } = UseUserContext();
   const { firstName, lastName, email, address, zipCode, city } = formData;
 
@@ -12,7 +21,7 @@ const Checkout = () => {
   return (
     <div className="col-sm-6 offset-3">
       <h2>Checkout</h2>
-      <form>
+      <form onSubmit={(e) => e.preventDefault()}>
         <div className="row">
           <div className="col">
             <div className="mb-3">
@@ -22,7 +31,7 @@ const Checkout = () => {
                 placeholder="First name"
                 property=""
                 name="firstName"
-                defaultValue={firstName}
+                value={firstName}
                 onChange={handleChangeProfile}
               />
             </div>
@@ -35,7 +44,7 @@ const Checkout = () => {
                 placeholder="Last name"
                 property=""
                 name="lastName"
-                defaultValue={lastName}
+                value={lastName}
                 onChange={handleChangeProfile}
               />
             </div>
@@ -49,7 +58,7 @@ const Checkout = () => {
             placeholder="Email address"
             property=""
             name="email"
-            defaultValue={email}
+            value={email}
             onChange={handleChangeProfile}
           />
           <small id="emailHelp" className="form-text text-muted">
@@ -64,7 +73,7 @@ const Checkout = () => {
             placeholder="Address"
             property=""
             name="address"
-            defaultValue={address}
+            value={address}
             onChange={handleChangeProfile}
           />
         </div>
@@ -77,7 +86,7 @@ const Checkout = () => {
                 placeholder="Postal Code"
                 name="zipCode"
                 property=""
-                defaultValue={zipCode}
+                value={zipCode}
                 onChange={handleChangeProfile}
               />
             </div>
@@ -90,7 +99,7 @@ const Checkout = () => {
                 placeholder="City"
                 name="city"
                 property=""
-                defaultValue={city}
+                value={city}
                 onChange={handleChangeProfile}
               />
             </div>

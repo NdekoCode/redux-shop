@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { UserContextProvider } from "./libs/context/useProfileContext";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Navbar from "./pages/components/Navbar";
+import { Confirm } from "./pages/Confirm";
 import Home from "./pages/Home";
 function App({ items, cartItems, saveToLocal }) {
   const [category, setCategory] = useState(0);
@@ -39,14 +39,8 @@ function App({ items, cartItems, saveToLocal }) {
           }
         />
         <Route path="/cart" element={<Cart />} />
-        <Route
-          path="/checkout"
-          element={
-            <UserContextProvider>
-              <Checkout />
-            </UserContextProvider>
-          }
-        />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/delivery" element={<Confirm />} />
       </Routes>
     </>
   );
