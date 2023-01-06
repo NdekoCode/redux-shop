@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import Table from "./components/cart/Table";
 
 const Cart = ({ cartItems }) => {
@@ -66,7 +67,7 @@ const Cart = ({ cartItems }) => {
               className="btn w-100 btn-light btn-lg d-block checkout bg-crimson"
               disabled={!cartItems.length}
             >
-              <Link href="/checkout" className="white d-block">
+              <Link to="/checkout" className="white d-block">
                 Checkout
               </Link>
             </button>
