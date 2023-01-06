@@ -107,16 +107,17 @@ const Checkout = () => {
               </div>
             </div>
           </div>
-          <br />
           {/*${
               !isValid && "disabled"
             }*/}
           <button
             type="submit"
-            disabled={true}
-            className={` white btn btn-light btn-lg btn-block bg-crimson checkout `}
+            // disabled={true}
+            className={`w-100  btn btn-light btn-lg btn-block bg-crimson checkout `}
           >
-            <Link to="/delivery">Confirm</Link>
+            <Link to="/delivery" className="white">
+              Confirm
+            </Link>
           </button>
         </form>
       </div>
