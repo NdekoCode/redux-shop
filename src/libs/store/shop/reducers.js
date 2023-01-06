@@ -51,6 +51,7 @@ export const cartReducer = (state = initialState, action) => {
       saveToLocalStorage(action.payload);
       return state;
     case RESET_CART:
+      saveToLocalStorage([]);
       return { ...state, cartItems: [] };
     default:
       return state;

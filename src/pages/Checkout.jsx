@@ -1,8 +1,17 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import UseUserContext from "../libs/context/useProfileContext";
+import { getCartItems } from "../libs/store/shop/selectors";
 
 const Checkout = () => {
+  const { cartItems } = useSelector(getCartItems);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!cartItems.length) {
+      navigate("/");
+    }
+  }, [cartItems]);
   const { isValid, validate, formData, handleChangeProfile } = UseUserContext();
   const { firstName, lastName, email, address, zipCode, city } = formData;
 
