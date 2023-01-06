@@ -22,7 +22,7 @@ const Checkout = () => {
                 placeholder="First name"
                 property=""
                 name="firstName"
-                defaultValue={firstName}
+                value={firstName}
                 onChange={handleChangeProfile}
               />
             </div>
@@ -35,7 +35,7 @@ const Checkout = () => {
                 placeholder="Last name"
                 property=""
                 name="lastName"
-                defaultValue={lastName}
+                value={lastName}
                 onChange={handleChangeProfile}
               />
             </div>
@@ -49,7 +49,7 @@ const Checkout = () => {
             placeholder="Email address"
             property=""
             name="email"
-            defaultValue={email}
+            value={email}
             onChange={handleChangeProfile}
           />
           <small id="emailHelp" className="form-text text-muted">
@@ -64,7 +64,7 @@ const Checkout = () => {
             placeholder="Address"
             property=""
             name="address"
-            defaultValue={address}
+            value={address}
             onChange={handleChangeProfile}
           />
         </div>
@@ -77,7 +77,7 @@ const Checkout = () => {
                 placeholder="Postal Code"
                 name="zipCode"
                 property=""
-                defaultValue={zipCode}
+                value={zipCode}
                 onChange={handleChangeProfile}
               />
             </div>
@@ -90,7 +90,7 @@ const Checkout = () => {
                 placeholder="City"
                 name="city"
                 property=""
-                defaultValue={city}
+                value={city}
                 onChange={handleChangeProfile}
               />
             </div>
