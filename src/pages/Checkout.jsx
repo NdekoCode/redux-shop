@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Checkout = () => {
-  const formData = {
+  const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     address: "",
     zipCode: "",
     city: "",
-  };
+  });
+  const handleChange = useCallback(
+    (evt) => {
+      const name = evt.target.name;
+      const value = evt.target.value;
+      setFormData((state) => ({ ...state, [name]: value }));
+    },
+    [formData]
+  );
   const { firstName, lastName, email, address, zipCode, city } = formData;
   return (
     <>
@@ -26,7 +34,7 @@ const Checkout = () => {
                   property=""
                   name="firstName"
                   defaultValue={firstName}
-                  onChange={() => {}}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -39,7 +47,7 @@ const Checkout = () => {
                   property=""
                   name="lastName"
                   defaultValue={lastName}
-                  onChange={() => {}}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -53,7 +61,7 @@ const Checkout = () => {
               property=""
               name="email"
               defaultValue={email}
-              onChange={() => {}}
+              onChange={handleChange}
             />
             <small id="emailHelp" className="form-text text-muted">
               We'll never share your email with anyone else.
@@ -68,7 +76,7 @@ const Checkout = () => {
               property=""
               name="address"
               defaultValue={address}
-              onChange={() => {}}
+              onChange={handleChange}
             />
           </div>
           <div className="row">
@@ -81,7 +89,7 @@ const Checkout = () => {
                   name="zipCode"
                   property=""
                   defaultValue={zipCode}
-                  onChange={() => {}}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -94,7 +102,7 @@ const Checkout = () => {
                   city="city"
                   property=""
                   defaultValue={city}
-                  onChange={() => {}}
+                  onChange={handleChange}
                 />
               </div>
             </div>
