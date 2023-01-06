@@ -4,6 +4,7 @@ import "./App.css";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Navbar from "./pages/components/Navbar";
+import { Confirm } from "./pages/Confirm";
 import Home from "./pages/Home";
 function App({ items, cartItems, saveToLocal }) {
   const [category, setCategory] = useState(0);
@@ -39,6 +40,7 @@ function App({ items, cartItems, saveToLocal }) {
         />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/delivery" element={<Confirm />} />
       </Routes>
     </>
   );
