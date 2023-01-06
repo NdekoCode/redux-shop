@@ -7,8 +7,9 @@ const ACTIONS = {
   ADD_TO_CART: "ADD_TO_CART",
   UPDATE_CART: "UPDATE_CART",
   REMOVE_FROM_CART: "REMOVE_FROM_CART",
+  SAVE_CART: "SAVE_CART",
 };
-const { ADD_TO_CART, UPDATE_CART, REMOVE_FROM_CART } = ACTIONS;
+const { ADD_TO_CART, UPDATE_CART, REMOVE_FROM_CART, SAVE_CART } = ACTIONS;
 export const addToCart = (item) => {
   const quantity = item.quantity ? item.quantity : 1;
   return {
@@ -30,6 +31,12 @@ export const removeFromCart = (item) => {
   return {
     type: REMOVE_FROM_CART,
     payload: item,
+  };
+};
+export const saveCart = (cartItem) => {
+  return {
+    type: SAVE_CART,
+    payload: cartItem,
   };
 };
 export default ACTIONS;

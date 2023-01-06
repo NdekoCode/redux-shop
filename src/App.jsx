@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 import Navbar from "./pages/components/Navbar";
 import Home from "./pages/Home";
-function App({ items }) {
+function App({ items, cartItems, saveToLocal }) {
   const [category, setCategory] = useState(0);
   const [search, setSearch] = useState("");
   const [products, setProduct] = useState([]);
@@ -18,7 +19,8 @@ function App({ items }) {
           .filter((p) => p.name.toLowerCase().includes(search.toLowerCase()))
       );
     }
-  }, [category, search]);
+    saveToLocal(cartItems);
+  }, [category, search, cartItems]);
 
   return (
     <>
@@ -36,6 +38,7 @@ function App({ items }) {
           }
         />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </>
   );

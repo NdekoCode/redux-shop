@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useIncrement } from "../../../libs/hooks/useIncrement";
 import { removeFromCart, updateCart } from "../../../libs/store/shop/actions";
@@ -5,16 +6,16 @@ import { removeFromCart, updateCart } from "../../../libs/store/shop/actions";
 export const Row = ({ item }) => {
   const dispatch = useDispatch();
   const [{ count }, dispatchCount] = useIncrement(item.quantity);
-  const increment = () => {
-    dispatchCount({ type: "incr" });
-    update(item, count);
+
+  const update = (value, data = item, qty = count) => {
+    if (value === "incr") dispatchCount({ type: "incr" });
+    if (value === "decr") dispatchCount({ type: "decr" });
+    dispatch(updateCart(data, qty));
   };
-  const decrement = () => {
-    dispatchCount({ type: "decr" });
-    update(item, count);
-  };
-  const update = (item, count) => dispatch(updateCart(item, count));
   const remove = (item) => dispatch(removeFromCart(item));
+  useEffect(() => {
+    dispatch(updateCart(item, count));
+  }, [item, count]);
   return (
     <tr>
       <td>
@@ -33,7 +34,7 @@ export const Row = ({ item }) => {
           <button
             type="button"
             className="btn btn-secondary"
-            onClick={decrement}
+            onClick={() => update("decr")}
           >
             -
           </button>
@@ -41,7 +42,7 @@ export const Row = ({ item }) => {
           <button
             type="button"
             className="btn btn-secondary"
-            onClick={increment}
+            onClick={() => update("incr")}
           >
             +
           </button>
