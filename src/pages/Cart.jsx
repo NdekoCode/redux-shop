@@ -64,11 +64,11 @@ const Cart = ({ cartItems }) => {
             <button
               type="button"
               className="btn w-100 btn-light btn-lg d-block checkout bg-crimson"
-              disabled={true}
+              disabled={!cartItems.length}
             >
-              <a href="#" className="white d-block">
+              <Link href="/checkout" className="white d-block">
                 Checkout
-              </a>
+              </Link>
             </button>
           </div>
         </div>
