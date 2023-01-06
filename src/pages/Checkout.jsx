@@ -12,7 +12,7 @@ const Checkout = () => {
   return (
     <div className="col-sm-6 offset-3">
       <h2>Checkout</h2>
-      <form>
+      <form onSubmit={(e) => e.preventDefault()}>
         <div className="row">
           <div className="col">
             <div className="mb-3">
