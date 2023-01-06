@@ -1,7 +1,8 @@
 import list from "../../data/data";
+import { saveToLocalStorage } from "../../utils";
 import ACTIONS from "./actions";
 
-const { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_CART } = ACTIONS;
+const { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_CART, SAVE_CART } = ACTIONS;
 const initialState = {
   cartItems: [],
   items: list,
@@ -44,6 +45,8 @@ export const cartReducer = (state = initialState, action) => {
     case REMOVE_FROM_CART:
       const findAndDelete = (cart) => cart.id !== action.payload.id;
       return { ...state, cartItems: state.cartItems.filter(findAndDelete) };
+    case SAVE_CART:
+      saveToLocalStorage(action.payload);
     default:
       return state;
   }
